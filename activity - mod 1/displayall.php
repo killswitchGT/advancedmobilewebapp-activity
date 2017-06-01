@@ -23,20 +23,16 @@
 					include 'config.php';
 					include 'opendb.php';
 
-					$fname = (isset($_POST['fname'])    ? $_POST['fname']   : '');
-					$lname = (isset($_POST['lname'])    ? $_POST['lname']   : '');
-
-					$sql= "SELECT id, fname, lname
-					FROM lecture1
-					WHERE fname LIKE '$fname' AND lname LIKE '$lname' LIMIT 1";
+					$sql= "SELECT id, firstname, lastname
+					FROM mod1";
 					$result = mysqli_query($conn, $sql);
 
 					if (mysqli_num_rows($result) > 0) {
 					    // output data of each row
 					    while($row = mysqli_fetch_assoc($result)) {
 									echo "ID: " . $row["id"]. "<br>";
-					        echo "First Name: " . $row["fname"]. "<br>";
-					        echo "Last Name: " . $row["lname"]. "<br><hr>";
+					        echo "First Name: " . $row["firstname"]. "<br>";
+					        echo "Last Name: " . $row["lastname"]. "<br><hr>";
 					    }
 					} else {
 					    echo "0 results";
@@ -47,7 +43,7 @@
 					?>
 
 				<div data-role="footer" data-theme="b">
-	  <h4>Darice Corey-Gilbert &copy; 2017</h4>
+	  <h4>Darice Corey-Gilbert &copy; 2016</h4>
 	</div>
 	</body>
 </html>
