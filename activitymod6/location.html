@@ -20,12 +20,15 @@
 		<h1>My Coordinates</h1>	
 	</div>
 	
-<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBdmECt5hXRHBakS_r07IGwOYX-clT-XWE&callback=myMap"></script>
 
 <div class="g-signin2" data-onsuccess="onSignIn"></div>
 						
 
 <button onclick="getLocation()">Display My Coordinates</button>
+
+<div id="mapholder"></div>
+
+<script src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBdmECt5hXRHBakS_r07IGwOYX-clT-XWE"></script>
 
 <script>
 var x = document.getElementById("demo");
