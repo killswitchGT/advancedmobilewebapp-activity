@@ -8,6 +8,11 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script src="javascript/storage.js"></script>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="713352434991-mtnohcjqdpav08fijnu3gonq17bacugm.apps.googleusercontent.com">
+
+
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBdmECt5hXRHBakS_r07IGwOYX-clT-XWE&callback=myMap"></script>
 
 </head>
@@ -16,7 +21,9 @@
 	<div data-role="header" data-theme="b">
 		<h1>My Coordinates</h1>	
 	</div>
-		
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+						
 
 <button onclick="getLocation()">Display My Coordinates</button>
 
