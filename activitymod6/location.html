@@ -1,0 +1,45 @@
+<html>
+		<head>
+	<title>My Coordinates</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/rasmussenthemeroller.min.css" />
+<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="javascript/storage.js"></script>
+</head>
+	<body>
+		<div id="page" data-role="page" data-theme="b" >
+	<div data-role="header" data-theme="b">
+		<h1>My Coordinates</h1>	
+	</div>
+		
+
+<button onclick="getLocation()">Display My Coordinates</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+				
+
+	<div data-role="footer" data-theme="b">
+	  <h4>Joshua Melander &copy; 2017</h4>
+	</div>
+	</body>
+</html>
